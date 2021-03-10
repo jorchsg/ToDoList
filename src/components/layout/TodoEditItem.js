@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import useForm from '../../Hooks/useForm';
+import { handleUpdate } from '../actions/todoAction';
+import { TodoContext } from '../todo/TodoContext';
 
-const TodoEditItem = () => {
+const TodoEditItem = ({ todo }) => {
+
+    const [{ description }, handleInputChange] = useForm({
+        description: todo.desc
+    })
+    const { dispatch } = useContext(TodoContext)
+    const data = {
+        id: todo.id,
+        desc: description
+    }
+
     return (
         <div>
             <input
@@ -8,13 +21,15 @@ const TodoEditItem = () => {
                 type="text"
                 name="description"
                 autoComplete="off"
+                value={description}
+                onChange={handleInputChange}
             />
             <button
+                onClick={() => handleUpdate(data, dispatch)}
                 className="btn btn-info"
             >
                 Save
              </button>
-
         </div>
     )
 }

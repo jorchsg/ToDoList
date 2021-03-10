@@ -11,3 +11,17 @@ export const handleDelete = (todoId, dispatch) => {
         payload: todoId
     })
 }
+
+export const handleEdit = (todoId, dispatch) => {
+    dispatch({
+        type: 'edit',
+        payload: todoId
+    })
+}
+
+export const handleUpdate = (data, dispatch) => {
+    dispatch({
+        type: 'update',
+        payload: data
+    })
+}

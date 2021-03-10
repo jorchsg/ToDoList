@@ -11,7 +11,6 @@ const TodoListItem = ({ todo, index }) => {
             ) : (
                 <TodoShowItem todo={todo} index={index} />
             )}
-
         </li>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../todo/TodoContext';
-import { handleDelete } from '../actions/todoAction';
+import { handleDelete, handleEdit } from '../actions/todoAction';
 
 
 
@@ -10,12 +10,15 @@ const TodoShowItem = ({ todo: { id, desc }, index }) => {
 
     return (
         <div>
-            <p>
+            <p
+
+            >
                 {index + 1}. {desc}
             </p>
 
             <div>
                 <button
+                    onClick={() => handleEdit(id, dispatch)}
                     className="btn btn-warning mr-2"
                 >
                     Edit
