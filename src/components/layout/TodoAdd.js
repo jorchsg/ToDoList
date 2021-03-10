@@ -37,7 +37,7 @@ const TodoAdd = () => {
             <div className="container mb-3">
                 <form onSubmit={handleSubmit}>
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-lg-8 col-md-8 col-sm-12">
                             <input
                                 type="text"
                                 name="description"
@@ -48,10 +48,10 @@ const TodoAdd = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
-                        <div className="col-4">
+                        <div className="col-lg-4 col-md-4 col-sm-12">
                             <button
                                 type="submit"
-                                className="btn btn-primary btn-block mt-1"
+                                className="btn btn-primary btn-block m-0"
                             >
                                 Add
                             </button>

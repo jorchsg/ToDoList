@@ -8,7 +8,7 @@ const TodoList = () => {
 
     return (
         <>
-            <h2>Todo List Items</h2>
+            <h2>Tasks ({todos.length})</h2>
             {
                 todos.length === 0 ? (
                     <li className="list-group-item">Not Tasks Yet, Add New One</li>
