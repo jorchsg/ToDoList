@@ -4,3 +4,10 @@ export const handleAddTodo = (newTodo, dispatch) => {
         payload: newTodo
     })
 }
+
+export const handleDelete = (todoId, dispatch) => {
+    dispatch({
+        type: 'delete',
+        payload: todoId
+    })
+}

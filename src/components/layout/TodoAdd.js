@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import useForm from '../../Hooks/useForm';
 import { handleAddTodo } from '../actions/todoAction';
 import { TodoContext } from '../todo/TodoContext';
+import shortid from 'shortid';
 
 const TodoAdd = () => {
+
 
     const { dispatch } = useContext(TodoContext)
     const [{ description }, handleInputChange, handleClearForm] = useForm({
@@ -19,7 +21,7 @@ const TodoAdd = () => {
         }
 
         const newTodo = {
-            id: new Date().getTime(),
+            id: shortid.generate(),
             desc: description,
             done: false,
             isEdit: false

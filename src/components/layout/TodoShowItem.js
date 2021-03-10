@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { TodoContext } from '../todo/TodoContext';
+import { handleDelete } from '../actions/todoAction';
 
 
-const TodoShowItem = ({ todo: { desc }, index }) => {
+
+const TodoShowItem = ({ todo: { id, desc }, index }) => {
+
+    const { dispatch } = useContext(TodoContext);
 
     return (
         <div>
@@ -17,6 +22,7 @@ const TodoShowItem = ({ todo: { desc }, index }) => {
                 </button>
                 <button
                     className="btn btn-danger"
+                    onClick={() => handleDelete(id, dispatch)}
                 >
                     Delete
                 </button>
