@@ -1,7 +1,11 @@
+import React from 'react';
+import TodoView from './components/layout/TodoView';
+
+
 function App() {
   return (
     <div className="container">
-      <h1>Hello World</h1>
+      <TodoView />
     </div>
   );
 }
