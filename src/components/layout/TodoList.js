@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { TodoContext } from '../todo/TodoContext';
+import TodoListItem from './TodoListItem';
 
 const TodoList = () => {
-    return (
 
+    const { todos } = useContext(TodoContext)
+    console.log(todos);
+
+    return (
         <>
             <h2>Todo List Items</h2>
             <ul className="list-group-item list-group-flush bg-light">
-                <li>Task One</li>
-                <li>Task Two</li>
+                {todos.map((todo, index) => (
+                    <TodoListItem key={todo.id} todo={todo} index={index} />
+                ))}
             </ul>
         </>
     )

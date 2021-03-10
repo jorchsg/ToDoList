@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import TodoEditItem from './TodoEditItem';
+import TodoShowItem from './TodoShowItem';
 
-const TodoListItem = () => {
+const TodoListItem = ({ todo, index }) => {
+
     return (
-        <div>
+        <li className="list-group-item" key={todo.id}>
+            {todo.isEdit ? (
+                <TodoEditItem todo={todo} index={index} />
+            ) : (
+                <TodoShowItem todo={todo} index={index} />
+            )}
 
-        </div>
+        </li>
     )
 }
 

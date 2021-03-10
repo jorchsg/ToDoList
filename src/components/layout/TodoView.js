@@ -1,14 +1,19 @@
-import React from 'react';
-import '../../index.css';
+import React, { useContext } from 'react';
 import TodoList from './TodoList';
 import TodoAdd from './TodoAdd';
+import { TodoContext } from '../todo/TodoContext';
+
+import '../../index.css';
 
 const TodoView = () => {
+
+    const { todos } = useContext(TodoContext);
+
     return (
 
         <>
             <div className="mt-5">
-                <h1>LKMX - Front-End</h1>
+                <h1>LKMX - Front-End -  Tasks ({todos.lenght})</h1>
             </div>
 
             <div className="container bg-white p-3">
