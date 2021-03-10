@@ -1,1 +1,9 @@
+body{
+    background-color: #ECEFF1;
+}
 
+.list-group-item > div{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }

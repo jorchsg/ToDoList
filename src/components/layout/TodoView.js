@@ -1,26 +1,31 @@
-import React from 'react'
+import React from 'react';
+import '../../index.css';
+import TodoList from './TodoList';
+import TodoAdd from './TodoAdd';
 
 const TodoView = () => {
     return (
-        <div className="container">
 
-            <div className="row mt-5">
-                <h1>TodoApp</h1>
-                <hr />
+        <>
+            <div className="mt-5">
+                <h1>LKMX - Front-End</h1>
             </div>
 
-            <div className="row mt-3">
-                <div className="col-12">
-                    <h1>Todo Add</h1>
-                </div>
+            <div className="container bg-white p-3">
 
-                <div className="col-12">
-                    <h1>Todo Item</h1>
+                <div className="row mt-3">
+                    <div className="col-12">
+                        <TodoAdd />
+                    </div>
+
+                    <div className="col-12">
+                        <TodoList />
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
+        </>
     )
 }
 
